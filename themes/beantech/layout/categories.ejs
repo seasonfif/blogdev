@@ -6,20 +6,20 @@ layout: layout
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
+            <!-- <div id='tag_cloud' class="tags">
                 <% site.tags.map(function(tag){  %>
                     <a href="#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
                 <% }) %>
-            </div>
+            </div> -->
 
-            <!-- 标签列表 -->
+            <!-- 分类列表 -->
 
-            <% site.tags.map(function(tag){  %>
+            <% site.categories.map(function(category){  %>
             <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="<%= tag.name %>">
-                    <span class="tag-text"><%= tag.name %></span>
+                <span class="fa fa-tag listing-seperator" id="<%= category.name %>">
+                    <span class="tag-text"><%= category.name %></span>
                 </span>
-                <% tag.posts.map(function(post){  %>
+                <% category.posts.map(function(post){  %>
                   <!-- <li class="listing-item">
                   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
                   <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
@@ -34,8 +34,11 @@ layout: layout
                                 <%- post.subtitle %>
                             </h3>
                         <% } %>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                        <h3 class="post-subtitle" style="margin: 10px 0;">
+                            Posted by <%- post.author || config.author %> on
+                            <%= post.date.format(config.date_format) %>
+                        </h3>
+                    </a> 
                 </div>
                 <hr>
                 <% }) %>

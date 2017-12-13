@@ -5,7 +5,7 @@ tags:
 - Hexo
 - Blog
 - Android
-categories: Hexo
+categories: 地理
 ---
 ![icon](https://camo.githubusercontent.com/063c5a8aecdefe228efea177f3bfc55a513997cd/687474703a2f2f6f6c6e7a70646932752e626b742e636c6f7564646e2e636f6d2f556e7469746c65642d313838302e706e67)
 
